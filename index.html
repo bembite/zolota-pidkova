@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="shortcut icon" href="images/star.png" type="favicon/ico" /> -->
+
+        <title>Золота підкова</title>
+		<link rel="SHORTCUT ICON" href="images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.theme.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/flexslider.css">
+        <link rel="stylesheet" href="css/pricing.css">
+        <link rel="stylesheet" href="css/main.css">
+		<script type="text/javascript">
+		$(document).ready(function() {
+ 		  $(".carousel-inner").swiperight(function() {
+       $(this).parent().carousel('prev');
+  		 });
+  		 $(".carousel-inner").swipeleft(function() {
+       $(this).parent().carousel('next');
+   		});
+		});
+		</script>
+
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.flexslider.min.js"></script>
+       
+
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script>
+            function initialize() {
+                var mapCanvas = document.getElementById('map-canvas');
+                var mapOptions = {
+                    center: new google.maps.LatLng(49.547033, 25.633994),
+                    zoom: 16,
+                    scrollwheel: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(mapCanvas, mapOptions)
+
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(49.547033, 25.633994), 
+                    title:"Ресторан Золота Підкова"
+                });
+
+                // To add the marker to the map, call setMap();
+                marker.setMap(map);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+
+    </head>
+    <body data-spy="scroll" data-target="#template-navbar">
+
+        <!--== 4. Navigation ==-->
+        <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img id="logo" src="images/Logo_main.png" class="logo img-responsive">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="Food-fair-toggle">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about">про нас</a></li>
+                        <li><a href="#pricing">Меню</a></li>
+                        <li><a href="#great-place-to-enjoy">атмосфера</a></li>
+                        <li><a href="#breakfast">кухня</a></li>
+                        <li><a href="#reserve">Резервація</a></li>
+                        <li><a href="#contact">контакти</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.row -->
+        </nav>
+
+
+        <!--== 5. Header ==-->
+        	<!--
+<div id="header-slider" class="owl-carousel">
+	<div class="row">
+		<div id="myCarousel" class="carousel slide" style="max-width: 900px; margin: 0px auto;">
+            <div class="carousel-inner">
+                <div class="active item" align="center"><a href="#"><img src="images/1.jpg" class="img-rounded" alt="PS3 reparatie Haarlem"></a>
+                    <div class="carousel-caption">
+                        <h3>Cupcake ipsum dolor sit amet</h3>
+                        <p>Powder chocolate carrot cake. Applicake tart icing chupa chups marshmallow apple pie candy canes gingerbread croissant.</p>
+                    </div>
+                </div>
+                <div class="item" align="center"><a href="#"><img src="images/2.jpg" class="img-rounded" alt="Blu-ray Lens reparatie"></a>
+                    <div class="carousel-caption">
+                        <h3>Cupcake ipsum dolor sit amet</h3>
+                        <p>Pudding fruitcake chocolate pastry caramels dessert powder cupcake. Marzipan sweet roll jelly macaroon brownie.</p>
+                    </div>
+                </div>
+                <div class="item" align="center"><a href="#"><img src="http://lorempixel.com/1920/1080/food/" class="img-rounded" alt="Yellow Light of Death"></a>
+                    <div class="carousel-caption">
+                        <h3>Cupcake ipsum dolor sit amet</h3>
+                        <p>Ice cream pie marzipan cookie macaroon dragée cookie. Caramels tootsie roll danish chocolate cake pastry icing.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+        </div>
+	</div>
+</div>
+
+
+
+	
+ -->
+
+        <section id="header-slider" class="owl-carousel">
+            <div class="item">
+                <div class="container">
+                    <div class="header-content">
+                        <h1 class="header-title" style="color:white;text-shadow: 1px 1px 2px black, 0 0 3em black;" >СМАЧНІ СТРАВИ</h1>
+                        <p class="header-sub-title" style="color:white;">стараємось для Вас</p>
+                    </div> 
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="header-content">
+                        <h1 class="header-title" style="color:white; background-color: rgba(57, 72, 76, 0.54); ">ЖИВА МУЗИКА</h1>
+                    </div> 
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="header-content text-right pull-right" style=" background-color: rgba(57, 72, 76, 0.54);">
+                        <h1 class="header-title">ВИШУКАНІ НАПОЇ</h1>
+                        <p class="header-sub-title">широкий вибір</p>
+                    </div> 
+                </div>
+            </div>
+         
+        </section>
+   
+
+
+        <!--== 6. About us ==-->
+        <section id="about" class="about">
+            <img src="images/icons/about_black.png" class="img-responsive section-icon hidden-sm hidden-xs">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="hidden-xs col-sm-6 section-bg about-bg dis-table-cell">
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 dis-table-cell">
+                            <div class="section-content">
+                                <h2 class="section-content-title">Про нас</h2>
+                                <p class="section-content-para">
+                                    Якщо є привід для свята – значить щастя поряд! </br></br>Ресторан «Золота підкова» - місце щасливих людей, місце яскравого свята.
+                                </p>
+                                <p class="section-content-para">
+                                   Для вашої особливої події у нас є все!
+                                </p>
+                            </div> <!-- /.section-content -->
+                        </div>
+                    </div> <!-- /.row -->
+                </div> <!-- /.container-fluid -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#about -->
+
+
+        <!--==  7. Afordable Pricing  ==-->
+        <section id="pricing" class="pricing">
+            <div id="w">
+                <div class="pricing-filter">
+                    <div class="pricing-filter-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="section-header">
+                                        <h2 class="pricing-title">Вишукане меню</h2>
+                                        <ul id="filter-list" class="clearfix">
+                                            <li class="filter" data-filter="all">Всі страви</li>
+                                            <li class="filter" data-filter=".breakfast">Закуски</li>
+                                            <li class="filter" data-filter=".special">Гарячі страви</li>
+                                            <li class="filter" data-filter=".desert">Солодке</li>
+                                            <li class="filter" data-filter=".dinner">Алкоголь</li>
+                                        </ul><!-- @end #filter-list -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">  
+                        <div class="col-md-10 col-md-offset-1">
+                            <ul id="menu-pricing" class="menu-price">
+                                <li class="item dinner">
+
+                                    <a href="#">
+                                        <img src="images/food1.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc text-center">
+                                            <span>
+                                                <h3>Tomato Curry</h3>
+                                                Natalie &amp; Justin Cleaning by Justin Younger
+                                            </span>
+                                        </div>
+                                    </a>
+                                        
+                                    <h2 class="white">$20</h2>
+                                </li>
+
+                                <li class="item breakfast">
+
+                                    <a href="#">
+                                        <img src="images/food2.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Prawn Dish</h3>
+                                                Lorem ipsum dolor sit amet
+                                            </span>
+                                        </div>
+                                    </a>
+                                        
+                                    <h2 class="white">$20</h2>
+                                </li>
+                                <li class="item desert">
+
+                                    <a href="#">
+                                        <img src="images/food3.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Salad Dish</h3>
+                                                Consectetur adipisicing elit, sed do eiusmod
+                                            </span>
+                                        </div>
+                                    </a>
+                                    <h2 class="white">$20</h2>
+                                        
+                                   
+                                </li>
+                                <li class="item breakfast special">
+
+                                    <a href="#">
+                                        <img src="images/food4.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Prawn Dish</h3>
+                                                Tempor incididunt ut labore et dolore
+                                            </span>
+                                        </div>
+                                    </a>
+                                        
+                                    <h2 class="white">$15</h2>
+                                </li>
+                                <li class="item breakfast">
+
+                                    <a href="#">
+                                        <img src="images/food5.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Vegetable Dish</h3>
+                                                Magna aliqua. Ut enim ad minim veniam
+                                            </span>
+                                        </div>
+                                    </a>
+                                        
+                                    <h2 class="white">$20</h2>
+                                </li>
+                                <li class="item dinner special">
+
+                                    <a href="#">
+                                        <img src="images/food6.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Chicken Dish</h3>
+                                                Quis nostrud exercitation ullamco laboris
+                                            </span>
+                                        </div>
+                                    </a>
+
+                                    <h2 class="white">$22</h2>
+                                </li>
+                                <li class="item desert">
+
+                                    <a href="#">
+                                        <img src="images/food7.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Vegetable Noodles</h3>
+                                                Nisi ut aliquip ex ea commodo
+                                            </span>
+                                        </div>
+                                    </a>
+
+                                    <h2 class="white">$32</h2>
+                                </li>
+                                <li class="item dinner">
+
+                                    <a href="#">
+                                        <img src="images/food8.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Special Salad</h3>
+                                                Duis aute irure dolor in reprehenderit
+                                            </span>
+                                        </div>
+                                    </a>
+
+                                    <h2 class="white">$38</h2>
+                                </li>
+                                <li class="item desert special">
+
+                                    <a href="#">
+                                        <img src="images/food9.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Ice-cream</h3>
+                                                Excepteur sint occaecat cupidatat non
+                                            </span>
+                                        </div>
+                                    </a>
+                                    
+                                    <h2 class="white">$38</h2>
+                                </li>  
+                            </ul>
+
+                            <!-- <div class="text-center">
+                                    <a id="loadPricingContent" class="btn btn-middle hidden-sm hidden-xs">Load More <span class="caret"></span></a>
+                            </div> -->
+
+                        </div>   
+                    </div>
+                </div>
+
+            </div> 
+        </section>
+
+
+        <!--== 8. Great Place to enjoy ==-->
+        <section id="great-place-to-enjoy" class="great-place-to-enjoy">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
+                            <h2 class="section-title">Перше – атмосфера!</h2>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
+                            
+                        </div>
+                    </div> <!-- /.dis-table -->
+                </div> <!-- /.row -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#great-place-to-enjoy -->
+
+
+
+        <!--==  9. Our Beer  ==-->
+        <section id="beer" class="beer">
+            <div class="container-fluid">
+                <div class="row dis-table">
+                    <div class="hidden-xs col-sm-6 dis-table-cell section-bg">
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 dis-table-cell">
+                        <div class="section-content">
+                            <h2 class="section-content-title">Атмосфера</h2>
+                            <div class="section-description">
+                                <p class="section-content-para">
+                                    
+                                </p>
+                                <p class="section-content-para">
+                                    Витримана і стильна. Благородна класика в інтер’єрі ресторану налаштовує на піднесений настрій та урочистість. А художнє панно старовинного міста Тернопіль підсилює відчуття прекрасного та величного
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <!--== 10. Our Breakfast Menu ==-->
+        <section id="breakfast" class="breakfast">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
+                            <h2 class="section-title">Друге – смачна та якісна кухня.</h2>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
+                            
+                        </div>
+                    </div> <!-- /.dis-table -->
+                </div> <!-- /.row -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#breakfast -->
+
+
+
+        <!--== 11. Our Bread ==-->
+        <section id="bread" class="bread">
+            
+            <div class="container-fluid">
+                <div class="row dis-table">
+                    <div class="hidden-xs col-sm-6 dis-table-cell section-bg">
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 dis-table-cell">
+                        <div class="section-content">
+                            <h2 class="section-content-title">
+                                 Найвідоміші та найпопулярніші європейські страви
+                            </h2>
+                            <div class="section-description">
+                                <p class="section-content-para">
+                                    Доповнити традиційний стіл можна ексклюзивними солодощами і святковими десертами та тортами, які ми випікаємо на замовлення. Крім того, вам неодмінно сподобаються м'ясні делікатеси нашого коптіння та страви, представлені в мангал-меню.
+                                </p>
+                                <p class="section-content-para">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!--== 12. Our Featured Dishes Menu ==-->
+
+        <!--
+        <section id="featured-dish" class="featured-dish">
+            <img class="img-responsive section-icon hidden-sm hidden-xs" src="images/icons/food_black.png">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
+                            <h2 class="section-title">Our Featured Dishes Menu</h2>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
+                            
+                        </div>
+                    </div> 
+                </div> 
+            </div> 
+        </section> 
+        -->
+
+
+        <!--== 13. Menu List ==-->
+        <!--
+        <section id="menu-list" class="menu-list">
+            <div class="container">
+                <div class="row menu">
+                    <div class="col-md-10 col-md-offset-1 col-sm-9 col-sm-offset-2 col-xs-12">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="menu-catagory">
+                                        <h2>Bread</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">French Bread</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$149.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Italian Bread</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$149.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Regular Bread</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$149.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="menu-catagory">
+                                        <h2>Drinks</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Regular Tea</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$20.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Garlic Tea</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$30.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Black Coffee</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$40.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="menu-catagory">
+                                        <h2>Meat</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Bacon</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$70.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Sausage</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$50.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Chicken Balls</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$90.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="menu-catagory">
+                                        <h2>Special</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Chicken Balls</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$90.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Bacon</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$70.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Sausage</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$50.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="moreMenuContent"></div>
+                        <div class="text-center">
+                            <a id="loadMenuContent" class="btn btn-middle hidden-sm hidden-xs">Load More <span class="caret"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		-->
+
+
+        <!--== 14. Have a look to our dishes ==-->
+<!--
+        <section id="have-a-look" class="have-a-look hidden-xs">
+            <img class="img-responsive section-icon hidden-sm hidden-xs" src="images/icons/food_black.png">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="menu-gallery" style="width: 50%; float:left;">
+                            <div class="flexslider-container">
+                                <div class="flexslider">
+                                    <ul class="slides">
+                                        <li>
+                                            <img src="images/menu-gallery/menu1.png" />
+                                        </li>
+                                        <li>
+                                            <img src="images/menu-gallery/menu2.jpg" />
+                                        </li>
+                                        <li>
+                                            <img src="images/menu-gallery/menu3.png" />
+                                        </li>
+                                        <li>
+                                            <img src="images/menu-gallery/menu4.jpg" />
+                                        </li>
+                                        <li>
+                                            <img src="images/menu-gallery/menu5.jpg" />
+                                        </li>
+                                        <li>
+                                            <img src="images/menu-gallery/menu6.jpg" />
+                                        </li>
+                                        <li>
+                                            <img src="images/menu-gallery/menu7.jpg" />
+                                        </li>
+                                        <li>
+                                            <img src="images/menu-gallery/menu8.jpg" />
+                                        </li>
+                                        <li>
+                                            <img src="images/menu-gallery/menu9.jpg" />
+                                        </li>
+                                        <li>
+                                            <img src="images/menu-gallery/menu10.jpg" />
+                                        </li>
+                                        <li>
+                                            <img src="images/menu-gallery/menu11.jpg" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-heading hidden-xs color-bg" style="width: 50%; float:right;">
+                            <h2 class="section-title">Have A Look To Our Dishes</h2>
+                        </div>
+                        
+
+                    </div> 
+                </div> 
+            </div> 
+        </section>
+    -->
+
+
+
+
+        <!--== 15. Reserve A Table! ==-->
+        <section id="reserve" class="reserve">
+         
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
+                            <h2 class="section-title">Замовте стіл!</h2>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
+                            
+                        </div>
+                    </div> <!-- /.dis-table -->
+                </div> <!-- /.row -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#reserve -->
+
+
+
+        <section class="reservation">
+           
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class=" section-content">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-6">
+                                <form class="reservation-form" method="post" action="reserve.php">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control reserve-form empty iconified" name="name" id="name" required="required" placeholder="  &#xf007;  Ім'я">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" name="email" class="form-control reserve-form empty iconified" id="email" required="required" placeholder="  &#xf1d8;  e-mail">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <input type="tel" class="form-control reserve-form empty iconified" name="phone" id="phone" required="required" placeholder="  &#xf095;  Телефон">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control reserve-form empty iconified" name="datepicker" id="datepicker" required="required" placeholder="&#xf017;  Час">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12">
+                                            <textarea type="text" name="message" class="form-control reserve-form empty iconified" id="message" rows="3" required="required" placeholder="  &#xf086;  Додаткові побажання"></textarea>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12">
+                                            <button type="submit" id="submit" name="submit" class="btn btn-reservation">
+                                                <span><i class="fa fa-check-circle-o"></i></span>
+                                                Замовити
+                                            </button>
+                                        </div>
+                                            
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="col-md-2 hidden-sm hidden-xs"></div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="opening-time">
+                                    <h3 class="opening-time-title">Режим роботи</h3>
+                                    <p> Щодня з 11:00 до 23:00</p>
+                                   
+                                    <div class="launch">
+                                        <h3>Жива музика</h3>
+                                        <p>Щодня з 19:00</p>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="contact" class="contact">
+            <div class="container-fluid color-bg">
+                <div class="row dis-table">
+                    <div class="hidden-xs col-sm-6 dis-table-cell">
+                        <h2 class="section-title">Наші контакти</h2>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 dis-table-cell">
+                        <div class="section-content">
+                            Адреса: м. Тернопіль, проспект Степана Бандери, 96</br>
+							Режим роботи: щодня з 11:00 до 23:00</br>
+							Жива музика: щодня з 19:00</br>
+							Стаціонарний тел.:<a href="tel:+380%20352%24465%00" value="+380352244600" target="_blank" style="color:white"> (0352) 24-46-00</a></br>
+							Мобільний тел.: <a href="tel:+380%267%20462%205123" value="+380674625123" target="_blank" style="color:white">(067) 46 25 123</a></br>
+							<a href="https://www.facebook.com/search/top/?q=%D0%B7%D0%BE%D0%BB%D0%BE%D1%82%D0%B0%20%D0%BF%D1%96%D0%B4%D0%BA%D0%BE%D0%B2%D0%B0" style="color: white"><img src="http://s3-eu-west-1.amazonaws.com/nusdigital/image/images/16226/original/icon_facebook-b.png" style="width: 20px; height: 20px;">Слідкуйте за нами</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div id="map-canvas"></div>
+            </div>
+        </div>
+
+
+
+        <section class="contact-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                        <div class="row">
+                             <form class="contact-form" method="post" action="contact.php">
+                                
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input  name="name" type="text" class="form-control" id="name" required="required" placeholder="  Ім'я">
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="email" type="email" class="form-control" id="email" required="required" placeholder="  Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="subject" type="text" class="form-control" id="subject" required="required" placeholder="  Тема">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6">
+                                    <textarea name="message" type="text" class="form-control" id="message" rows="7" required="required" placeholder="  Повідомлення"></textarea>
+                                </div>
+
+                                <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+                                    <div class="text-center">
+                                        <button type="submit" id="submit" name="submit" class="btn btn-send">Відправити </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Copyright, 2017 <a href="#">bembieria</a></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mixitup.min.js" ></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script type="text/javascript" src="js/jquery.hoverdir.js"></script>
+        <script type="text/javascript" src="js/jQuery.scrollSpeed.js"></script>
+        <script src="js/script.js"></script>
+        
+
+    </body>
+</html>
