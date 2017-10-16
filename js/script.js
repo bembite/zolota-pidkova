@@ -58,7 +58,13 @@ wow.init();
             Navbar shrink script
 ======================================================================*/
 $(document).ready(function() {
-    var contactShowed=true;
+    var contactShowed=false;
+      if(contactShowed==false)
+        {
+            contactShowed=true;
+            $("#contact-overlay").animate({left:'0px'},"slow");
+           // console.log($(document).scrollTop());
+        }
     $(window).scroll(function() {
         if ($(document).scrollTop() > 50) {
             $('nav').addClass('shrink');
