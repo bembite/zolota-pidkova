@@ -62,26 +62,24 @@ $(document).ready(function() {
     $(window).scroll(function() {
         if ($(document).scrollTop() > 50) {
             $('nav').addClass('shrink');
-            console.log($(document).scrollTop());
+           // console.log($(document).scrollTop());
         } 
         else {
             $('nav').removeClass('shrink');
 
-            console.log($(document).scrollTop());
+           // console.log($(document).scrollTop());
         }
         
          if (($(document).scrollTop() > 100 )&& (contactShowed==true)) {
-            console.log("works");
             contactShowed=false;
             $("#contact-overlay").animate({left:'-35%'},"slow");
-            console.log($(document).scrollTop());
+          //  console.log($(document).scrollTop());
         }
         if(($(document).scrollTop() < 100 )&& (contactShowed==false))
         {
-            console.log("works back");
             contactShowed=true;
             $("#contact-overlay").animate({left:'0px'},"slow");
-            console.log($(document).scrollTop());
+           // console.log($(document).scrollTop());
         }
     });
 });

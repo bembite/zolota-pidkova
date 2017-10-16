@@ -421,7 +421,9 @@ li.active
     position: absolute;
     max-width: 30%;
     padding: 7px;
-    border-left: 2px solid rgba(237, 195, 52, 0.45); /* Линия слева от текста */
+    border-radius:0px  0px 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.9); /* Параметры тени */
+
    
 }
 #contact-overlay p
@@ -437,8 +439,34 @@ li.active
   color:white;
   
 }
+#contact-overlay img
+{width: 100%}
 
+#order-table{
+    height: 57px;
+    background: #c78c4e;
+    border-radius: 8px;
+    padding:2px;
+    color: #231d10;
+}
+#order-table:hover{
+ 
+    background: #ab8864;
+}
 
+#order-table img{
+    height: 55px;
+    width:auto;
+ 
+}
+#order-table a{
+	margin-left:55px;
+    color: #231d10;
+    font-size: 28px;
+    text-align: center;
+    text-decoration: none;
+ 
+}
 
 
 
