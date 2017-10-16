@@ -742,10 +742,7 @@ footer a:hover
 	{
 		margin-top: 94px;
 	}
-	.contact-overlay
-	{
-		margin-top: 90px;
-	}
+
 }
 
 @media (min-width: 1500px) {
@@ -848,7 +845,10 @@ footer a:hover
 	.btn-reservation {
 		padding: 10px;
 	}
-
+	.contact-overlay
+	{
+		display: none;
+	}
 }
 
 
@@ -984,6 +984,12 @@ footer a:hover
 	.btn-reservation {
 		padding: 10px;
 	}
+	.contact-overlay
+	{
+		display: none;
+	}
+}
+
 }
 
 /*=================================================
