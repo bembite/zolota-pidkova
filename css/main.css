@@ -233,7 +233,7 @@ input.empty, textarea.empty {
     /* text-transform: uppercase; */
     /* font-family: 'Roboto', sans-serif; */
     /* font-weight: 200; */
-    margin: 0px 18px;
+    margin: 0px 10px;
     padding: 17px 0px;
     font-size: 21px;
     /* font-style: italic; */
@@ -273,12 +273,11 @@ input.empty, textarea.empty {
 
 .navbar-brand {
 	margin-top: -15px;
-  	width: 205px;
+  	width: 280px;
 }
-
 .navbar-default .navbar-collapse {
-	border-color: #669D38;
-	background-color: #7d4f38;
+	    border-color: #7d4f38;
+    background-color: #7d4f38;
 }
 @media screen and (min-width:768px){
     .navbar-brand-centered {
@@ -291,7 +290,7 @@ input.empty, textarea.empty {
     }
     .navbar>.container .navbar-brand-centered, 
     .navbar>.container-fluid .navbar-brand-centered {
-        margin-left: -80px;
+        margin-left: -115px;
     }
 
 }
@@ -301,8 +300,8 @@ input.empty, textarea.empty {
 -----------------------------------------------*/
 
 nav.navbar.shrink {
-	max-height: 62px;
-  	padding: 12px 0px;
+	max-height: 79px;
+  	padding: 17px 0px;
   	transition: all 0.3s ease-in-out;
   	-webkit-transition: all 0.3s ease-in-out;
   	-moz-transition: all 0.3s ease-in-out;
@@ -814,13 +813,17 @@ footer a:hover
 		margin: 0px 10px;
 		font-size: 12px;
 	}
+	.navbar-brand {
+    margin-top: -21px;
+    width: 280px;
+	}
 
 	nav.shrink .navbar-brand {
 		font-size: 22px;
 	}
 	.navbar-collapse
 	{
-		background-color: #7d4f38;
+    background-color: #7d4f38;
 	}
 
 	.owl-carousel {
@@ -900,13 +903,17 @@ footer a:hover
 /*------------------------------  for extra-small (mobile) screen -------------------------*/
 
 @media (max-width: 767px) {
+	.navbar-brand {
+    margin-top: -21px;
+    width: 280px;
+}
 	.custom-navbar-default {
 		padding: 15px 0px;
 	}
 	.navbar-default .navbar-collapse
 	{
-	    border-color: #285e6d;
-    	background-color: #285e6d;	
+       border-color: #7d4f38;
+    background-color: #7d4f38;
 	}
 	.navbar-default .navbar-brand {
 		font-size: 30px;
