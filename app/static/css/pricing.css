@@ -98,6 +98,7 @@
     font-size: 32px;
     padding: 12px;
     margin: 0px;
+    display: none;
 }
 /*#menu-pricing .item1 {
 	display: none;
