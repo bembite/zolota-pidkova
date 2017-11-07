@@ -165,6 +165,11 @@ body
 	padding: 6% 1% 10% 6%;
 
 }
+.holidays-section
+{
+	padding: 5% 0% 15% 20%;
+
+}
 /*.custom-row
 {
 	width: 100vw;
@@ -510,6 +515,17 @@ li.active
 .great-place-to-enjoy .section-bg
 {
 	background-image: url('../images/atm-1.jpg');
+}
+.our-proposition .section-bg
+{
+	background-image: url('../images/proposition.jpg');
+}
+.holidays .section-bg
+{
+
+    background: url("../images/celebrity.jpg");
+    background-repeat: no-repeat, no-repeat;
+    min-height: 563px;
 }
 /*=================================================
 ||				9. Our Beer
