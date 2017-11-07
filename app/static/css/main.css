@@ -149,10 +149,21 @@ body
 .section-content-para
 {
 	margin: 30px 0px;
+	font-size: 15px;
 }
+
 .section-content
 {
 	padding: 15% 25% 15% 20%;
+}
+.about-content
+{
+	padding: 6% 1% 10% 6%;
+}
+.atmosphere-section
+{
+	padding: 6% 1% 10% 6%;
+
 }
 /*.custom-row
 {
@@ -166,7 +177,7 @@ body
 .dis-table .dis-table-cell
 {
 	display: table-cell;
-	padding: 0;
+	
 	float: none;
 	/*width: 50vw;*/
 	/*position: relative;*/
