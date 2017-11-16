@@ -7,11 +7,11 @@ application = Flask(__name__)
 application.secret_key = 'development key'
 
 #mail.init_app(app)
-@application.route('/kek')
+@application.route('/')
 def home():
   return render_template('changes.html')
 
-@application.route('/')
+@application.route('/kek')
 def maitanance():
   return render_template('maitanance.html')
   
