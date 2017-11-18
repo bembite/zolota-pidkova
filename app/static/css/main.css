@@ -170,6 +170,48 @@ body
 	padding: 5% 0% 15% 20%;
 
 }
+.menu-section
+{
+}
+.menu-button
+{background: #805224;
+  background-image: -webkit-linear-gradient(top, #805224, #C78C4E);
+  background-image: -moz-linear-gradient(top, #805224, #C78C4E);
+  background-image: -ms-linear-gradient(top, #805224, #C78C4E);
+  background-image: -o-linear-gradient(top, #805224, #C78C4E);
+  background-image: linear-gradient(to bottom, #805224, #C78C4E);
+  -webkit-border-radius: 16;
+  -moz-border-radius: 16;
+  border-radius: 16px;
+  text-shadow: 3px 1px 3px #666666;
+  -webkit-box-shadow: 0px 4px 5px #666666;
+  -moz-box-shadow: 0px 4px 5px #666666;
+  box-shadow: 0px 4px 5px #666666;
+  color: #edc334;
+  font-size: 20px;
+  padding: 10px 40px 10px 40px;
+  text-decoration: none;
+  font-family: Annabelle, 'Comic Sans MS', cursive;
+}
+  .menu-button:hover {
+  background: #ab8864;
+  background-image: -webkit-linear-gradient(top, #ab8864, #d4802d);
+  background-image: -moz-linear-gradient(top, #ab8864, #d4802d);
+  background-image: -ms-linear-gradient(top, #ab8864, #d4802d);
+  background-image: -o-linear-gradient(top, #ab8864, #d4802d);
+  background-image: linear-gradient(to bottom, #ab8864, #d4802d);
+  text-decoration: none;
+  color:white;
+ 
+
+}
+.menu-para
+{
+	margin: 30px 40px;
+}
+
+
+
 /*.custom-row
 {
 	width: 100vw;
