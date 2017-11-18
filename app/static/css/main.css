@@ -170,9 +170,25 @@ body
 	padding: 5% 0% 15% 20%;
 
 }
+.menu
+{
+		padding-top: 0px;
+		padding-right: 0px;
+		padding-bottom: 50px;
+		padding-left: 0px;
+}
 .menu-section
 {
+ padding-right: 0px;
+  padding-left: 0px;
+
+
 }
+.menu-button-block
+{
+	padding: 5px;
+}
+
 .menu-button
 {background: #805224;
   background-image: -webkit-linear-gradient(top, #805224, #C78C4E);
@@ -205,10 +221,44 @@ body
  
 
 }
+.menu-title
+{
+ color:black;
+ z-index: 2;
+ position: relative;
+
+}
 .menu-para
 {
 	margin: 30px 40px;
 }
+.menu-container
+{
+	position: relative;
+    background: #F0D957;
+    overflow: hidden;
+}
+.menu-container:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background-image: url( ../images/menu-bg.jpg);
+
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
 
 
 
@@ -614,10 +664,7 @@ li.active
 /*=================================================
 ||				12. menu
 ==================================================*/
-.menu 
-{
-    padding: 50px 0px;
-}
+
 
 .menu-catagory h2 
 {
