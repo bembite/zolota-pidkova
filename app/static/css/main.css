@@ -52,7 +52,9 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:100,400,700);
 @font-face {
     font-family: Annabelle; /* Гарнитура шрифта */
-    src: url(fonts/Annabelle.ttf); /* Путь к файлу со шрифтом */
+    src: url(fonts/Adventure.ttf); /* Путь к файлу со шрифтом */
+
+      
    }
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
 
@@ -733,10 +735,10 @@ li.active
 .opening-time 
 {
 	background-color: #7d4f38;
-	color: #fff;
 	margin-top: -50px;
 	padding: 20px 40px;
 	border-radius: 4px;
+	color: #EDC334;
 }
 
 .opening-time-title 
@@ -922,12 +924,12 @@ footer a:hover
 @media (max-width: 991px) and (min-width: 768px){
 
 	.custom-navbar-default {
-		padding: 15px 0px;
+		padding: 16px 0px;
 	}
 
 	.navbar-default .navbar-nav>li>a {
-		margin: 0px 10px;
-		font-size: 12px;
+		margin: 0px 7px;
+		font-size: 16px;
 	}
 	.navbar-brand {
     margin-top: -21px;
