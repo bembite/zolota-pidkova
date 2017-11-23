@@ -7,8 +7,9 @@ from wtforms.fields.html5 import EmailField
 class ContactForm(FlaskForm):
 	 name = TextField("name")
 	 #email = TextField('Email address', [validators.DataRequired(), validators.Email("kek")])
-	 
-	 email = EmailField("Email",[validators.DataRequired("Please enter your email address."),validators.Email("Please enter your email address.")])
+	 email = TextField("Email",  [validators.Required("Please enter your email address."), validators.Email("check your email address")])
+
+	 #email = EmailField("Email",[validators.DataRequired("Please enter your email address."),validators.Email("Please enter your email address.")])
 	 phone=TextField("Phone")
 	 time=TextField("Time")
 	 message = TextAreaField("Message")

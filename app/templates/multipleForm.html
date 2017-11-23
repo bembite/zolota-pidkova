@@ -1,0 +1,12 @@
+<!doctype html>
+<form method="POST" action="/">
+    {{ form1.csrf_token }}
+    {{ form1.name.label }} {{ form1.name(size=20) }}
+    <input type="submit" name='btn' value="form1">
+</form>
+<form method="POST" action="/">
+    {{ form2.csrf_token }}
+    {{ form2.name.label }} {{ form2.name(size=20) }}
+    <input type="submit" name='btn' value="form2">
+</form>
+</htm
