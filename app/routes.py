@@ -1,13 +1,30 @@
 # -*- coding: utf-8 -*- 
 from flask import Flask, render_template, request, flash, json
 from forms import ContactForm,MyForm
+from flask_mail import Mail, Message
+import localsettings
+
+
 
 
 
 application = Flask(__name__)
 
 application.secret_key = 'development key'
-#mail.init_app(app)
+#for mail
+mail = Mail()
+application.config["MAIL_SERVER"] = "smtp.gmail.com"
+application.config["MAIL_PORT"] = 465
+application.config["MAIL_USE_SSL"] = True
+application.config["MAIL_USERNAME"] = 'volodya.ternopil1997@gmail.com'
+application.config["MAIL_PASSWORD"] = localsettings.MAIL_PASSWORD
+ 
+mail.init_app(application)
+
+
+
+
+
 @application.route('/')
 def home():
   return render_template('changes.html')
@@ -25,6 +42,12 @@ def contact():
       flash('All fields are required.')
       return render_template('contact.html', form=form)
     else:
+      msg = Message(form.phone.data, sender='volodya.ternopil1997@gmail.com', recipients=['volodya.ternopil1997@gmail.com'])
+      msg.body = """
+      From: %s <%s>
+      %s
+      """ % (form.name.data, form.email.data, form.message.data)
+      mail.send(msg)
       return 'Form posted.'
  
   elif request.method == 'GET':
