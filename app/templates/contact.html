@@ -2,6 +2,11 @@
  
 {% block content %}
   <h2>Contact</h2>
+  {% if success %}
+    <p>Thank you for your message. We'll get back to you shortly.</p>
+ 
+  {% else %}
+
    {% for message in form.name.errors %}
     <div class="flash">{{ message }}</div>
   {% endfor %}
@@ -41,4 +46,5 @@
 
     {{ form.submit }}
   </form>
+  {% endif %}
 {% endblock %}

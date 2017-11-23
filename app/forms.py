@@ -3,6 +3,8 @@ from flask_wtf import FlaskForm
 from wtforms import validators
 from wtforms.fields import TextField, TextAreaField, SubmitField, StringField
 from wtforms.validators import Required
+from wtforms import DateField
+
 
 
 class ContactForm(FlaskForm):
@@ -19,3 +21,5 @@ class ContactForm(FlaskForm):
 class MyForm(FlaskForm):
      name = StringField('name', validators=[Required()])
      submit = SubmitField('Register')
+class DateForm(FlaskForm):
+    dt = DateField('Pick a Date', format="%m/%d/%Y")

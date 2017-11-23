@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*- 
 from flask import Flask, render_template, request, flash, json
-from forms import ContactForm,MyForm
+from forms import ContactForm,MyForm, DateForm
 from flask_mail import Mail, Message
+from datetime import date
 import localsettings
 
 
@@ -48,8 +49,7 @@ def contact():
       %s
       """ % (form.name.data, form.email.data, form.message.data)
       mail.send(msg)
-      return 'Form posted.'
- 
+      return render_template('contact.html', success=True)
   elif request.method == 'GET':
     return render_template('contact.html', form=form)
 
@@ -66,6 +66,14 @@ def index():
 		print "form2"
 		return render_template('multiforms.html',form1=form1,form2=form2)
 	return render_template('multiforms.html',form1=form1,form2=form2)
+
+@application.route('/time', methods=['post','get'])
+def time():
+    form = DateForm()
+    if form.validate_on_submit():
+        return form.dt.data.strftime('%x')
+    return render_template('datepicker.html', form=form)
+
 
   
 if __name__ == '__main__':
