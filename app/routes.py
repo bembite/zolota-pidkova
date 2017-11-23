@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, flash, json
 from forms import ContactForm,MyForm, DateForm
 from flask_mail import Mail, Message
 from datetime import date
+from flask_wtf.recaptcha import RecaptchaField
 import localsettings
 
 
@@ -21,7 +22,9 @@ application.config["MAIL_USERNAME"] = 'volodya.ternopil1997@gmail.com'
 application.config["MAIL_PASSWORD"] = localsettings.MAIL_PASSWORD
  
 mail.init_app(application)
-
+#for capcha
+application.config['RECAPTCHA_PRIVATE_KEY']=localsettings.PRIVATE_KEY
+application.config['RECAPTCHA_PUBLIC_KEY']=localsettings.PUBLIC_KEY
 
 
 
@@ -73,6 +76,28 @@ def time():
     if form.validate_on_submit():
         return form.dt.data.strftime('%x')
     return render_template('datepicker.html', form=form)
+
+@application.route('/main', methods=['GET', 'POST'])
+def main():
+  form = ContactForm()
+  print request
+  if request.method == 'POST':
+    if form.validate() == False:
+      print form.validate()
+      flash('All fields are required.')
+      print "some fields not validated"
+      return render_template('main.html', form=form, scroll=True)
+    else:
+      msg = Message(form.phone.data, sender='volodya.ternopil1997@gmail.com', recipients=['volodya.ternopil1997@gmail.com'])
+      msg.body = """
+      From: %s <%s>
+      %s
+      """ % (form.name.data, form.email.data, form.message.data)
+      mail.send(msg)																																																																																																																																																																																																																																					
+      return render_template('main.html', success=True, scroll=True)
+  elif request.method == 'GET':
+	return render_template('main.html', form=form)
+
 
 
   

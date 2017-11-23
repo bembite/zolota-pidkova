@@ -1,6 +1,14 @@
-{% extends "layout.html" %}
+
+ <<!DOCTYPE html>
+ <html>
+ <head>
+   <title></title>
+   <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+
+ </head>
+ <body>
  
-{% block content %}
+ 
   <h2>Contact</h2>
   {% if success %}
     <p>Thank you for your message. We'll get back to you shortly.</p>
@@ -44,7 +52,12 @@
     {{ form.message.label }}
     {{ form.message }}
 
+    {{ form.recaptcha }}
+
+
     {{ form.submit }}
   </form>
   {% endif %}
-{% endblock %}
+  </body>
+ </html>
+

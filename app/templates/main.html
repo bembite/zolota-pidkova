@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="shortcut icon" href="/static/images/star.png" type="favicon/ico" /> -->
+
+        <title>Золота підкова</title>
+		<link rel="SHORTCUT ICON" href="/static/images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/css/owl.carousel.css">
+        <link rel="stylesheet" href="/static/css/owl.theme.css">
+        <link rel="stylesheet" href="/static/css/animate.css">
+        <link rel="stylesheet" href="/static/css/flexslider.css">
+        <link rel="stylesheet" href="/static/css/pricing.css">
+        <link rel="stylesheet" href="/static/css/main.css">
+		<script type="text/javascript">
+		$(document).ready(function() {
+ 		  $(".carousel-inner").swiperight(function() {
+       $(this).parent().carousel('prev');
+  		 });
+  		 $(".carousel-inner").swipeleft(function() {
+       $(this).parent().carousel('next');
+   		});
+		});
+		</script>
+
+        <script src="/static/js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="/static/js/jquery.flexslider.min.js"></script>
+       
+
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyA9K0XnLwkcBoCx9nsL7IJdFQG2bjlkt-A"></script>
+        <script>
+            function initialize() {
+                var mapCanvas = document.getElementById('map-canvas');
+                var mapOptions = {
+                    center: new google.maps.LatLng(49.547033, 25.633994),
+                    zoom: 16,
+                    scrollwheel: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(mapCanvas, mapOptions)
+
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(49.547033, 25.633994), 
+                    title:"Ресторан Золота Підкова"
+                });
+
+                // To add the marker to the map, call setMap();
+                marker.setMap(map);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+
+    </head>
+    <body data-spy="scroll" data-target="#template-navbar">
+
+        <!--== 4. Navigation ==-->
+        <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header center-block">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                       
+                        <div class="navbar-brand navbar-brand-centered">
+                            <a class="navbar-brand " href="#">
+                                <img id="logo" src="/static/images/Logo_main.png" class="logo img-responsive">
+                            </a>
+                        </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="Food-fair-toggle">
+                    <ul class="nav navbar-nav">
+                <li><a href="#about">Новини</a></li>
+                        <li><a href="#pricing">Про нас</a></li>
+                        <li><a href="#great-place-to-enjoy">Меню</a></li>
+                        <li><a href="#great-place-to-enjoy">Банкет</a></li>
+              </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      
+                        <li><a href="#music">Музика</a></li>
+                        <li><a href="#reserve">Резервацiя</a></li>
+                        <li><a href="#contact">Контакти</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.row -->
+        </nav>
+        
+
+
+        <!--== 5. Header ==-->
+        	<!--
+<div id="header-slider" class="owl-carousel">
+	<div class="row">
+		<div id="myCarousel" class="carousel slide" style="max-width: 900px; margin: 0px auto;">
+            <div class="carousel-inner">
+                <div class="active item" align="center"><a href="#"><img src="/static/images/1.jpg" class="img-rounded" alt="PS3 reparatie Haarlem"></a>
+                    <div class="carousel-caption">
+                        <h3>Cupcake ipsum dolor sit amet</h3>
+                        <p>Powder chocolate carrot cake. Applicake tart icing chupa chups marshmallow apple pie candy canes gingerbread croissant.</p>
+                    </div>
+                </div>
+                <div class="item" align="center"><a href="#"><img src="/static/images/2.jpg" class="img-rounded" alt="Blu-ray Lens reparatie"></a>
+                    <div class="carousel-caption">
+                        <h3>Cupcake ipsum dolor sit amet</h3>
+                        <p>Pudding fruitcake chocolate pastry caramels dessert powder cupcake. Marzipan sweet roll jelly macaroon brownie.</p>
+                    </div>
+                </div>
+                <div class="item" align="center"><a href="#"><img src="http://lorempixel.com/1920/1080/food/" class="img-rounded" alt="Yellow Light of Death"></a>
+                    <div class="carousel-caption">
+                        <h3>Cupcake ipsum dolor sit amet</h3>
+                        <p>Ice cream pie marzipan cookie macaroon dragée cookie. Caramels tootsie roll danish chocolate cake pastry icing.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+        </div>
+	</div>
+</div>
+
+
+
+	
+ -->
+         <div id="contact-overlay" class="contact-overlay">
+                    <h2>Чекаємо Вас:</h2>
+                    <p>Тернопіль, проспект Степана Бандери, 96</br>
+                    <i class="fa fa-clock-o" aria-hidden="true"> Щодня з 11:00 до 23:00</i>
+                    </br>
+                   <i class="fa fa-music" aria-hidden="true">
+ Жива музика:  з 19:00</i></br>
+                            <i class="fa fa-phone" aria-hidden="true">
+                                <a href="tel:+380%20352%24465%00" value="+380352244600" target="_blank" style="color:white"> (0352) 24-46-00</a></i></br>
+                             <i class="fa fa-phone" aria-hidden="true">
+                                <a href="tel:+380%267%20462%205123" value="+380674625123" target="_blank" style="color:white"> (067) 46 25 123</a></i></br>
+                    </p>
+                    <div id="order-table">
+                       
+                       <a href="#reserve">
+                                <img src="/static/images/desk_bell.png">Замовити стіл
+                        </a>
+                    </div>
+                            <img src="/static/images/ornament.png">
+        </div>
+
+
+
+        <section id="header-slider" class="owl-carousel">
+            <div class="item">
+                <div class="container">
+                    <div class="header-content">
+                        <h1 class="header-title" style="color:white;" ></h1>
+                        <p class="header-sub-title" style="color:white;"></p>
+                    </div> 
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="header-content">
+                        <h1 class="header-title" style="color:white; "></h1>
+                    </div> 
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="header-content text-right pull-right" style="">
+                        <h1 class="header-title"></h1>
+                        <p class="header-sub-title"></p>
+                    </div> 
+                </div>
+            </div>
+         
+        </section>
+   
+
+
+        <!--== 6. About us ==-->
+        <section id="about" class="about">
+            
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="hidden-xs col-sm-6 section-bg about-bg dis-table-cell">
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 dis-table-cell">
+                            <div class="section-content about-content">
+                                <h2 class="section-content-title">Про нас</h2>
+                                <p class="section-content-para">
+                                    <strong>Ресторан "Золота Підкова"</strong>- справжній приклад вишуканого закладу у стилі "Сучасної Європи". 
+                                    <br>
+
+                                <p class="section-content-para">
+                                   Головною окрасою ресторану є художнє панно старовинного міста Тернопіль та меню, яке містить в собі найвідоміші та найпопулярніші страви родом з Європи !
+                                </p> 
+                                <p class="section-content-para">
+                                     При замовленні та при бажанні клієнтів ми випікаємо святкові торти та іншу випічку.
+                                </p>
+                                <p class="section-content-para">
+                                    Також в ресторані ви зможете скуштувати м'ясні делікатеси власного коптіння, та страви ,які представлені в мангал меню.
+                                </p>
+                                    
+                                                                    </p>
+                                <!--<p class="section-content-para">
+                                   Для вашої особливої події у нас є все!
+                                </p>-->
+                            </div> <!-- /.section-content -->
+                        </div>
+                    </div> <!-- /.row -->
+                </div> <!-- /.container-fluid -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#about -->
+
+
+       
+
+
+        <!--== 8. Great Place to enjoy ==-->
+        <section id="great-place-to-enjoy" class="great-place-to-enjoy">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
+                            <h2 class="section-title">Перше – атмосфера!</h2>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
+                            
+                        </div>
+                    </div> <!-- /.dis-table -->
+                </div> <!-- /.row -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#great-place-to-enjoy -->
+
+
+
+        <!--==  9. Our Beer  ==-->
+        <section id="beer" class="beer">
+            <div class="container-fluid">
+                <div class="row dis-table">
+                    <div class="hidden-xs col-sm-6 dis-table-cell section-bg">
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 dis-table-cell" id="music">
+                        <div class="section-content atmosphere-section" >
+                            <h2 class="section-content-title">Атмосфера</h2>
+                            <div class="section-description">
+                                <p class="section-content-para">
+                                    
+                                </p>
+                                <p class="section-content-para">
+                                    Кожного дня з 19.00 год гостей ресторану зустрічає жива музика з використанням класичного фортепіано, саксофонну, труби у виконанні артистів та вокальних віртуозів Тернопільського академічного обласного драматичного театру ім. Т. Г. Шевченка. Окрім чудової якості виконання, вони подарують вам свої талант і незабутню енергію: ви отримаєте не просто музикантів на свято, а концерт із запальним шоу.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section id="our-proposition" class="our-proposition">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
+                            <h2 class="section-title"> Урочистості!</h2>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
+                            
+                        </div>
+                    </div> <!-- /.dis-table -->
+                </div> <!-- /.row -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#great-place-to-enjoy -->
+
+        <section id="holidays" class="holidays">
+            <div class="container-fluid">
+                <div class="row dis-table">
+                    <div class="hidden-xs col-sm-6 dis-table-cell section-bg">
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 dis-table-cell">
+                        <div class="section-content holidays-section">
+                            <h2 class="section-content-title">Пропозиції</h2>
+                            <div class="section-description">
+                                <p class="section-content-para">
+                                    
+                                </p>
+                                <p class="section-content-para">
+                                   <strong>В ресторані можна відсвяткувати:</strong>
+                                   <ul>
+                                       <li>Проведення урочистих заходів;</li>
+                                       <li>Організація сімейних подій: весілля,  хрестини або дитячі свята;</li>
+                                       <li>Святкування дня народження чи ювілею;</li>
+                                       <li> Організація  корпоративного свята або  ділової зустрічі;</li>
+                                       <li> Проведення романтичного вечора або побачення з коханою людиною ;</li>
+                                       <li> Відпочити від робочих буднів з друзями і близькими людьми.</li>
+                                   </ul>
+                                   <strong>Кухня:</strong>  Європейська та Українська<br>
+                                   <strong>Кількість залів:</strong>
+                                   <ul>
+                                       <li>Головний зал – до 100 осіб банкет</li>
+                                       <li>VIP зал – до 20 осіб банкет</li>
+                                   </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu">
+
+        <div class="container-fluid menu-section" >
+          <div class="menu-container">
+                    <center><h2 class="section-content-title menu-title">Меню</h2></center> 
+
+            </div>
+          </div>
+              <p class="menu-para">
+                                Ми гарантуємо індивідуальний підхід та увагу до Ваших побажань, влаштуємо незабутнє свято, бездоганну організацію та проведення урочистостей. 
+                                </p>
+          <div class="row">
+            <div class="col-sm-6 menu-button-block" >
+                <form method="get" action="/static/menus/zolota-pidkova-menu-curves.pdf">
+                    <button type="submit" class="btn menu-button center-block" >Класичне меню</button>
+                </form>           
+            </div>
+            <div class="col-sm-6" >
+               <form method="get" action="/static/menus/zolota-pidkova-menu.pdf">
+                    <button type="submit" class="btn menu-button center-block">Бенкетне меню</button>
+                </form>        
+
+            </div>
+          </div>
+        </div>
+        </section>
+
+
+
+   
+
+
+
+
+
+
+
+        <!--== 15. Reserve A Table! ==-->
+        <section id="reserve" class="reserve">
+         
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
+                            <h2 class="section-title">Замовте стіл!</h2>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
+                            
+                        </div>
+                    </div> <!-- /.dis-table -->
+                </div> <!-- /.row -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#reserve -->
+
+
+
+        <section class="reservation">
+           
+            <div class="wrapper" id="scroll">
+                <div class="container-fluid">
+                    <div class=" section-content">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-6">
+                                {% if scroll %}
+                                <script>
+                                    document.location.hash = '#scroll';
+                                </script>
+                                {% endif %}
+                                
+                                
+                                    <p>Thank you for your message. We'll get back to you shortly.</p>
+                                 
+                                  {% else %}
+
+                                   {% for message in form.name.errors %}
+                                    <div class="flash">{{ message }}</div>
+                                  {% endfor %}
+                                 
+                                  {% for message in form.email.errors %}
+                                    <div class="flash">{{ message }}</div>
+                                  {% endfor %}
+                                 
+                                  {% for message in form.phone.errors %}
+                                    <div class="flash">{{ message }}</div>
+                                  {% endfor %}
+                                 
+                                  {% for message in form.time.errors %}
+                                    <div class="flash">{{ message }}</div>
+                                  {% endfor %}
+                                   {% for message in form.message.errors %}
+                                    <div class="flash">{{ message }}</div>
+                                  {% endfor %}
+                                  <form action="{{ url_for('main') }}" method=post class="reservation-form">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            {{ form.hidden_tag() }}
+
+                                            <div class="form-group">
+                                                {{ form.name (class="form-control reserve-form empty iconified",placeholder="<i class='fa fa-github'></i> Email Address")}}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form.email (class="form-control reserve-form empty iconified")}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                {{ form.name (class="form-control reserve-form empty iconified")}}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form.time (class="form-control reserve-form empty iconified",)}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12">
+                                            {{ form.message (class="form-control reserve-form empty iconified")}}
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12">
+                                                {{ form.submit (class="btn btn-reservation")}}
+                                        </div>
+                                            
+                                    </div>
+                                </form>
+                                {% endif %}
+
+                            </div>
+
+                            <div class="col-md-2 hidden-sm hidden-xs" ></div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="opening-time">
+                                    <h3 class="opening-time-title">Режим роботи</h3>
+                                    <p> Щодня з 11:00 до 23:00</p>
+                                   
+                                    <div class="launch">
+                                        <h3>Жива музика</h3>
+                                        <p>Щодня з 19:00</p>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="contact" class="contact">
+            <div class="container-fluid color-bg">
+                <div class="row dis-table">
+                    <div class="hidden-xs col-sm-6 dis-table-cell">
+                        <h2 class="section-title">Наші контакти</h2>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 dis-table-cell">
+                        <div class="section-content">
+                            Адреса: м. Тернопіль, проспект Степана Бандери, 96</br>
+							Режим роботи: щодня з 11:00 до 23:00</br>
+							Жива музика: щодня з 19:00</br>
+							Стаціонарний тел.:<a href="tel:+380%20352%24465%00" value="+380352244600" target="_blank" style="color:white"> (0352) 24-46-00</a></br>
+							Мобільний тел.: <a href="tel:+380%267%20462%205123" value="+380674625123" target="_blank" style="color:white">(067) 46 25 123</a></br>
+							<a href="https://www.facebook.com/search/top/?q=%D0%B7%D0%BE%D0%BB%D0%BE%D1%82%D0%B0%20%D0%BF%D1%96%D0%B4%D0%BA%D0%BE%D0%B2%D0%B0" style="color: white"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i>Слідкуйте за нами</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div id="map-canvas"></div>
+            </div>
+        </div>
+
+
+
+        <section class="contact-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                        <div class="row">
+                             <form class="contact-form" method="post" action="contact.php">
+                                
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input  name="name" type="text" class="form-control" id="name" required="required" placeholder="  Ім'я">
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="email" type="email" class="form-control" id="email" required="required" placeholder="  Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="subject" type="text" class="form-control" id="subject" required="required" placeholder="  Тема">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6">
+                                    <textarea name="message" type="text" class="form-control" id="message" rows="7" required="required" placeholder="  Повідомлення"></textarea>
+                                </div>
+
+                                <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+                                    <div class="text-center">
+                                        <button type="submit" id="submit" name="submit" class="btn btn-send">Відправити </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Copyright, 2017 <a href="mailto:volodya.ternopil1997@gmail.com?Subject=copyright" target="_top">bembieria</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="/static/js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="/static/js/jquery.mixitup.min.js" ></script>
+        <script src="/static/js/wow.min.js"></script>
+        <script src="/static/js/jquery.validate.js"></script>
+        <script type="text/javascript" src="/static/js/jquery.hoverdir.js"></script>
+        <script type="text/javascript" src="/static/js/jQuery.scrollSpeed.js"></script>
+        <script src="/static/js/script.js"></script>
+        
+
+    </body>
+</html>
