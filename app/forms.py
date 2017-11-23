@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*- 
 from flask_wtf import FlaskForm
 from wtforms import validators
-from wtforms.fields import TextField, TextAreaField, SubmitField
-from wtforms.fields.html5 import EmailField
+from wtforms.fields import TextField, TextAreaField, SubmitField, StringField
+from wtforms.validators import Required
+
 
 class ContactForm(FlaskForm):
 	 name = TextField("name")
@@ -14,3 +15,7 @@ class ContactForm(FlaskForm):
 	 time=TextField("Time")
 	 message = TextAreaField("Message")
 	 submit = SubmitField("Send")
+
+class MyForm(FlaskForm):
+     name = StringField('name', validators=[Required()])
+     submit = SubmitField('Register')

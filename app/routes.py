@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- 
 from flask import Flask, render_template, request, flash, json
-from forms import ContactForm
+from forms import ContactForm,MyForm
 
 
 
@@ -29,6 +29,20 @@ def contact():
  
   elif request.method == 'GET':
     return render_template('contact.html', form=form)
+
+@application.route('/test',methods=['GET','POST'])
+def index():
+	name1 = None
+	form1 = MyForm(prefix='form1')
+	name2 = None
+	form2 = MyForm(prefix='form2')
+	if form1.validate_on_submit() and form1.submit.data:
+		print "form1"
+		return render_template('multiforms.html',form1=form1,form2=form2)
+	if form2.validate_on_submit() and form2.submit.data:
+		print "form2"
+		return render_template('multiforms.html',form1=form1,form2=form2)
+	return render_template('multiforms.html',form1=form1,form2=form2)
 
   
 if __name__ == '__main__':

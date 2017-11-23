@@ -1,0 +1,14 @@
+<!doctype html>
+<form method="POST" action="/test">
+     {{ form1.csrf_token }}
+     {{ form1.name.label }} {{ form1.name(size=20) }}
+     {{ form1.submit }}
+
+ </form>
+ <form method="POST" action="/test">
+    {{ form2.csrf_token }}
+    {{ form2.name.label }} {{ form2.name(size=20) }}
+    {{ form2.submit }}
+
+ </form>
+</html>
