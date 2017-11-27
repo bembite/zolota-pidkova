@@ -17,6 +17,18 @@
         <link rel="stylesheet" href="/static/css/flexslider.css">
         <link rel="stylesheet" href="/static/css/pricing.css">
         <link rel="stylesheet" href="/static/css/main.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="/static/js/bootstrap-datetimepicker.ua.js" charset="UTF-8"></script>
+        <script>
+
+   
+        jQuery(function($) { $( ".dtpick" ).datepicker(); });
+
+        </script>
+
 		<script type="text/javascript">
 		$(document).ready(function() {
  		  $(".carousel-inner").swiperight(function() {
@@ -431,7 +443,7 @@
                                                 {{ form.phone (class="form-control reserve-form empty iconified",placeholder=form.phone.description )}}
                                             </div>
                                             <div class="form-group">
-                                                {{ form.time (class="form-control reserve-form empty iconified",placeholder=form.time.description)}}
+                                                {{ form.dt(class="dtpick form-control reserve-form empty iconified",placeholder=form.dt.description) }}
                                             </div>
                                         </div>
 

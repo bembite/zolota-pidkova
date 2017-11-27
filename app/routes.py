@@ -95,7 +95,7 @@ def main():
       msg.body = """
       From: %s <%s>
       %s
-      """ % (form.name.data, form.email.data, form.message.data)
+      """ % (form.name.data, form.email.data, form.message.data, form.dt.data.strftime('%x'))
       mail.send(msg)																																																																																																																																																																																																																																					
       return render_template('main.html', form=form, scroll=True, success=True)
   elif request.method == 'GET':

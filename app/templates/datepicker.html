@@ -6,11 +6,13 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<script>
-	$(function() {
-		$( ".dtpick" ).datepicker();
-	});
-	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/jquery.datetimepicker.css"/ >
+
+	<script src="/static/js/jquery.datetimepicker.js"></script>
+	<script src="/static/js/bootstrap-datetimepicker.ua.js" charset="UTF-8"></script>
+
+
 </head>
 <body>
 
@@ -18,9 +20,21 @@
 <form method="post" action="">
     {{ form.hidden_tag() }}
     {{ form.dt(class="dtpick") }}
+    {{ form.time(class=".datetimepicker") }}
+
     <button type="submit">Go</button>
 </form>
 
+<script>
 
+	$(function() {
+		
+		$( ".dtpick" ).datepicker();
+		$('.timepicker1').timepicker();
+		$('.datetimepicker').datetimepicker();
+
+
+	});
+	</script>
 </body>
 </html>
