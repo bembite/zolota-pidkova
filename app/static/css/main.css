@@ -731,11 +731,27 @@ li.active
 {
 	margin-top: -20px;
 }
+.reservation-message
+{
+	
+    margin-top: -83px;
+}
+.reservation-mistake
+{
+	margin-top: -48px;
+    margin-top: -48px;
+    margin-bottom: 38px;
+    border-radius: 12px;
+    padding: 2px;
+    text-align: center;
+    background-color: #ff4444b5;
+    border: 1px solid red;
 
+}
 .opening-time 
 {
 	background-color: #7d4f38;
-	margin-top: -50px;
+	
 	padding: 20px 40px;
 	border-radius: 4px;
 	color: #EDC334;

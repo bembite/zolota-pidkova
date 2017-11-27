@@ -8,14 +8,14 @@ import localsettings
 
 
 
-class ContactForm(FlaskForm):
-	 name = TextField("name",[validators.Required("Please enter your name .")])
-	 email = TextField("Email",  [validators.Required("Please enter your email address."), validators.Email("check your email address")])
-	 phone=TextField("Phone",[validators.Required("Please enter your phone.")])
-	 time=TextField("Time",[validators.Required("Please enter your time.")])
-	 message = TextAreaField("Message",[validators.Required("Please enter your message.")])
+class OrderTable(FlaskForm):
+	 name = TextField("name",[validators.Required("Please enter your name .")],description=u"Ім'я*")
+	 email = TextField("Email",  [validators.Required("Please enter your email address."), validators.Email("check your email address")],description="Email")
+	 phone=TextField("Phone",[validators.Required("Please enter your phone.")],description=u"Телефон*")
+	 time=TextField("Time",[validators.Required("Please enter your time.")],description=u"Час*")
+	 message = TextAreaField("Message",[validators.Required("Please enter your message.")],description=u"Додаткові побажання")
 	 #recaptcha = RecaptchaField()
-	 submit = SubmitField("Send")
+	 submit = SubmitField("Готово")
 
 class MyForm(FlaskForm):
      name = StringField('name', validators=[Required()])

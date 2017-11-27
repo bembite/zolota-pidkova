@@ -384,88 +384,88 @@
                 <div class="container-fluid">
                     <div class=" section-content">
                         <div class="row">
-                            <div class="col-md-5 col-sm-6">
-                                {% if scroll %}
+                               
+                               
+                                
+                                    {% if scroll %}
                                 <script>
                                     document.location.hash = '#scroll';
+                                    log("scroll");
                                 </script>
                                 {% endif %}
+                                {% if success %}
+                                <div class="col-md-5 col-sm-6 reservation-message">
+                                	<h2 class="section-content-title">Дякуємо,<br> ми Вам зателефонуємо!</h2>
+                                </div>
+                                {% else %}
                                 
-                                
-                                    <p>Thank you for your message. We'll get back to you shortly.</p>
-                                 
-                                  {% else %}
+                            
+                               
+                              
+                               
 
-                                   {% for message in form.name.errors %}
-                                    <div class="flash">{{ message }}</div>
-                                  {% endfor %}
-                                 
-                                  {% for message in form.email.errors %}
-                                    <div class="flash">{{ message }}</div>
-                                  {% endfor %}
-                                 
-                                  {% for message in form.phone.errors %}
-                                    <div class="flash">{{ message }}</div>
-                                  {% endfor %}
-                                 
-                                  {% for message in form.time.errors %}
-                                    <div class="flash">{{ message }}</div>
-                                  {% endfor %}
-                                   {% for message in form.message.errors %}
-                                    <div class="flash">{{ message }}</div>
-                                  {% endfor %}
+                                
+                                
+                                <div class="col-md-5 col-sm-6">
+                                {% if mistake %}
+                                <div class="reservation-mistake">
+                                	<p>Перевірте Ваші данні, обов'язкові поля мають бути заповнені.</p>
+                                </div>
+                                {% endif %}
+                                  
                                   <form action="{{ url_for('main') }}" method=post class="reservation-form">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
                                             {{ form.hidden_tag() }}
 
                                             <div class="form-group">
-                                                {{ form.name (class="form-control reserve-form empty iconified",placeholder="<i class='fa fa-github'></i> Email Address")}}
+                                                {{ form.name (class="form-control reserve-form empty iconified",placeholder=form.name.description)}}
                                             </div>
                                             <div class="form-group">
-                                                {{ form.email (class="form-control reserve-form empty iconified")}}
+                                                {{ form.email (class="form-control reserve-form empty iconified",placeholder=form.email.description)}}
                                             </div>
                                         </div>
 
                                         <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
-                                                {{ form.name (class="form-control reserve-form empty iconified")}}
+                                                {{ form.phone (class="form-control reserve-form empty iconified",placeholder=form.phone.description )}}
                                             </div>
                                             <div class="form-group">
-                                                {{ form.time (class="form-control reserve-form empty iconified",)}}
+                                                {{ form.time (class="form-control reserve-form empty iconified",placeholder=form.time.description)}}
                                             </div>
                                         </div>
 
                                         <div class="col-md-12 col-sm-12">
-                                            {{ form.message (class="form-control reserve-form empty iconified")}}
+                                            {{ form.message (class="form-control reserve-form empty iconified",placeholder=form.message.description)}}
                                         </div>
 
                                         <div class="col-md-12 col-sm-12">
                                                 {{ form.submit (class="btn btn-reservation")}}
                                         </div>
                                             
-                                    </div>
+                                    
                                 </form>
+                                </div>
+                        </div>
                                 {% endif %}
 
-                            </div>
 
-                            <div class="col-md-2 hidden-sm hidden-xs" ></div>
+                            	<div class="col-md-2 hidden-sm hidden-xs" ></div>
 
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="opening-time">
-                                    <h3 class="opening-time-title">Режим роботи</h3>
-                                    <p> Щодня з 11:00 до 23:00</p>
-                                   
-                                    <div class="launch">
-                                        <h3>Жива музика</h3>
-                                        <p>Щодня з 19:00</p>
-                                    </div>
+                           		<div class="col-md-4 col-sm-6 col-xs-12">
+	                                <div class="opening-time">
+	                                    <h3 class="opening-time-title">Режим роботи</h3>
+	                                    <p> Щодня з 11:00 до 23:00</p>
+	                                   
+	                                    <div class="launch">
+	                                        <h3>Жива музика</h3>
+	                                        <p>Щодня з 19:00</p>
+	                                    </div>
 
-                                    
-                                </div>
-                            </div>
-                        </div>
+	                                    
+	                                </div>
+	                            </div>
+                        
 
                     </div>
                 </div>
@@ -514,15 +514,17 @@
                                     <div class="form-group">
                                         <input  name="name" type="text" class="form-control" id="name" required="required" placeholder="  Ім'я">
                                     </div>
+
                                     <div class="form-group">
                                         <input name="email" type="email" class="form-control" id="email" required="required" placeholder="  Email">
                                     </div>
+                                </div>
                                     <div class="form-group">
                                         <input name="subject" type="text" class="form-control" id="subject" required="required" placeholder="  Тема">
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col-md-12 col-sm-12">
                                     <textarea name="message" type="text" class="form-control" id="message" rows="7" required="required" placeholder="  Повідомлення"></textarea>
                                 </div>
 

@@ -1,11 +1,15 @@
-# -*- coding: utf-8 -*- 
+  # -*- coding: utf-8 -*- 
 from flask import Flask, render_template, request, flash, json
-from forms import ContactForm,MyForm, DateForm
+from forms import OrderTable,MyForm, DateForm
 from flask_mail import Mail, Message
 from datetime import date
 from flask_wtf.recaptcha import RecaptchaField
 import localsettings
 
+import sys  
+
+reload(sys)  
+sys.setdefaultencoding('utf8')
 
 
 
@@ -79,14 +83,13 @@ def time():
 
 @application.route('/main', methods=['GET', 'POST'])
 def main():
-  form = ContactForm()
+  form = OrderTable()
   print request
   if request.method == 'POST':
     if form.validate() == False:
       print form.validate()
-      flash('All fields are required.')
-      print "some fields not validated"
-      return render_template('main.html', form=form, scroll=True)
+      print "some fields are not validated"
+      return render_template('main.html', form=form, scroll=True, mistake=True)
     else:
       msg = Message(form.phone.data, sender='volodya.ternopil1997@gmail.com', recipients=['volodya.ternopil1997@gmail.com'])
       msg.body = """
@@ -94,7 +97,7 @@ def main():
       %s
       """ % (form.name.data, form.email.data, form.message.data)
       mail.send(msg)																																																																																																																																																																																																																																					
-      return render_template('main.html', success=True, scroll=True)
+      return render_template('main.html', form=form, scroll=True, success=True)
   elif request.method == 'GET':
 	return render_template('main.html', form=form)
 
