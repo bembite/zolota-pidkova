@@ -77,8 +77,11 @@ def index():
 @application.route('/time', methods=['post','get'])
 def time():
     form = DateForm()
-    if form.validate_on_submit():
-        return form.dt.data.strftime('%x')
+    if form.validate() == False:
+      print("validation failed;")
+    else:
+        print(form.dt.data)
+        return form.dt.data
     return render_template('datepicker.html', form=form)
 
 @application.route('/main', methods=['GET', 'POST'])
@@ -86,18 +89,25 @@ def main():
   form = OrderTable()
   print request
   if request.method == 'POST':
-    if form.validate() == False:
-      print form.validate()
-      print "some fields are not validated"
-      return render_template('main.html', form=form, scroll=True, mistake=True)
-    else:
-      msg = Message(form.phone.data, sender='volodya.ternopil1997@gmail.com', recipients=['volodya.ternopil1997@gmail.com'])
-      msg.body = """
-      From: %s <%s>
-      %s
-      """ % (form.name.data, form.email.data, form.message.data, form.dt.data.strftime('%x'))
-      mail.send(msg)																																																																																																																																																																																																																																					
-      return render_template('main.html', form=form, scroll=True, success=True)
+    if form.validate_on_submit() and form.submit.data:
+      if form.validate() == False:
+        print form.validate()
+        print "some fields are not validated"
+        return render_template('main.html', form=form, scroll=True, mistake=True)
+      else:
+        #print(form.time.data)
+        #print(form.dt.data)
+        msg = Message("Reservation", sender='volodya.ternopil1997@gmail.com', recipients=['volodya.ternopil1997@gmail.com'])
+        msg.body = """
+        Від: %s <%s>;
+        Телефон: %s;
+        Дата: %s;
+        Час: %s;
+        Для %s людей;
+        Повідомлення:" %s";
+        """ % (form.name.data, form.email.data,form.phone.data, form.dt.data, form.time.data,form.quant.data, form.message.data )
+        mail.send(msg)																																																																																																																																																																																																																																					
+        return render_template('main.html', form=form, scroll=True, success=True)
   elif request.method == 'GET':
 	return render_template('main.html', form=form)
 

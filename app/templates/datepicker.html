@@ -11,6 +11,13 @@
 
 	<script src="/static/js/jquery.datetimepicker.js"></script>
 	<script src="/static/js/bootstrap-datetimepicker.ua.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="/static/js/wickedpicker.js"></script>
+
+	<link rel='stylesheet' type='text/css'href='/static/css/timepicki.css'/>
+	<script type='text/javascript'src='/static/js/timepicki.js'></script>
+
+
+
 
 
 </head>
@@ -20,7 +27,7 @@
 <form method="post" action="">
     {{ form.hidden_tag() }}
     {{ form.dt(class="dtpick") }}
-    {{ form.time(class=".datetimepicker") }}
+    {{ form.time(class="timepicker") }}
 
     <button type="submit">Go</button>
 </form>
@@ -30,8 +37,17 @@
 	$(function() {
 		
 		$( ".dtpick" ).datepicker();
-		$('.timepicker1').timepicker();
-		$('.datetimepicker').datetimepicker();
+		$('.timepicker').timepicki({show_meridian:false,
+		min_hour_value:11,
+		max_hour_value:23,
+		step_size_minutes:15,
+		overflow_minutes:true,
+		increase_direction:'up',
+		disable_keyboard_mobile: true}); 
+
+
+            
+        
 
 
 	});

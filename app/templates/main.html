@@ -18,14 +18,28 @@
         <link rel="stylesheet" href="/static/css/pricing.css">
         <link rel="stylesheet" href="/static/css/main.css">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel='stylesheet' type='text/css'href='/static/css/timepicki.css'/>
         
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src="/static/js/bootstrap-datetimepicker.ua.js" charset="UTF-8"></script>
+            <script type='text/javascript'src='/static/js/timepicki.js'></script>
+
         <script>
 
    
-        jQuery(function($) { $( ".dtpick" ).datepicker(); });
+        jQuery(function($) { $( ".dtpick" ).datepicker(); 
+        $('.timepicker').timepicki({show_meridian:false,
+        min_hour_value:11,
+        max_hour_value:23,
+        step_size_minutes:15,
+        overflow_minutes:true,
+        increase_direction:'up',
+        disable_keyboard_mobile: true}); 
+
+
+    });
+
 
         </script>
 
@@ -407,7 +421,7 @@
                                 {% endif %}
                                 {% if success %}
                                 <div class="col-md-5 col-sm-6 reservation-message">
-                                	<h2 class="section-content-title">Дякуємо,<br> ми Вам зателефонуємо!</h2>
+                                	<h2 class="section-content-title">Дякуємо, ми Вам <br>зателефонуємо!</h2>
                                 </div>
                                 {% else %}
                                 
@@ -421,7 +435,7 @@
                                 <div class="col-md-5 col-sm-6">
                                 {% if mistake %}
                                 <div class="reservation-mistake">
-                                	<p>Перевірте Ваші данні, обов'язкові поля мають бути заповнені.</p>
+                                	<p>Перевірте Ваші данні, обов'язкові поля мають бути заповнені. Перевірти чи всі поля заповнені коректно </p>
                                 </div>
                                 {% endif %}
                                   
@@ -436,6 +450,9 @@
                                             <div class="form-group">
                                                 {{ form.email (class="form-control reserve-form empty iconified",placeholder=form.email.description)}}
                                             </div>
+                                              <div class="form-group">
+                                             {{ form.time(class="timepicker form-control reserve-form empty iconified", placeholder=form.time.description) }}
+                                            </div>
                                         </div>
 
                                         <div class="col-md-6 col-sm-6">
@@ -445,7 +462,12 @@
                                             <div class="form-group">
                                                 {{ form.dt(class="dtpick form-control reserve-form empty iconified",placeholder=form.dt.description) }}
                                             </div>
+                                                <div class="form-group">
+                                             {{ form.quant(class="form-control reserve-form empty iconified", placeholder=form.quant.description) }}
+                                            </div>
                                         </div>
+
+                                     
 
                                         <div class="col-md-12 col-sm-12">
                                             {{ form.message (class="form-control reserve-form empty iconified",placeholder=form.message.description)}}
