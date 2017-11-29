@@ -537,36 +537,70 @@
 
 
 
+      	{% if scrollContact %}
+		<script>
+		document.location.hash = '#scroll-contact';
+		log("scroll contact");
+		 </script>
+		{% endif %}
        <section class="contact-form">
-            <div class="container">
+            <div class="container" id="scroll-contact">
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-                        <div class="row">
-                             <form class="contact-form" method="post" action="{{ url_for('main') }}">
+                    {% if successContact %}
+                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                	<h2 class="section-content-title">Дякуємо, Ваша <br>думка важлива<br> для нас!</h2>
+                                </div>
+                    {% else %}
+                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+
                                 
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                         {{ form2.name ( class="form-control reserve-form empty iconified",placeholder=form2.name.description)}}                                    
-                                    </div>
-                                    <div class="form-group">
-                                        {{ form2.email (class="form-control reserve-form empty iconified",placeholder=form2.email.description)}}                                       
-                                    </div>
-                                    <div class="form-group">
-                                        {{ form2.subject (class="form-control reserve-form empty iconified",placeholder=form2.subject.description)}}                                          
-                                    </div>
-                                </div>
+                            
+                               
+                              
+                               
 
-                                <div class="col-md-6 col-sm-6">
-                                   {{ form2.message (class="form-control reserve-form empty iconified",placeholder=form2.message.description)}}
-
-                                <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
-                                    <div class="text-center">
-                                                {{ form.submit (class="btn btn-send",value="Відправити")}}
-                                    </div>
+                                
+                                
+                             <div class="col-md-5 col-sm-6">
+                                {% if mistakeContact %}
+                                <div class="reservation-mistake">
+                                	<p>Перевірте Ваші данні, обов'язкові поля мають бути заповнені. Перевірти чи всі поля заповнені коректно </p>
                                 </div>
-                            </form>
+                                {% endif %}
+
+	                             <form class="contact-form" method="post" action="{{ url_for('main') }}">
+	                                
+	                                <div class="col-md-6 col-sm-6">
+	                                	{{ form2.hidden_tag() }}
+	                                    <div class="form-group">
+	                                         {{ form2.name ( class="form-control reserve-form empty iconified",placeholder=form2.name.description)}}                                    
+	                                    </div>
+	                                    <div class="form-group">
+	                                        {{ form2.email (class="form-control reserve-form empty iconified",placeholder=form2.email.description)}}                                       
+	                                    </div>
+	                                    <div class="form-group">
+	                                        {{ form2.subject (class="form-control reserve-form empty iconified",placeholder=form2.subject.description)}}                                          
+	                                    </div>
+	                                </div>
+
+	                                <div class="col-md-6 col-sm-6">
+	                                    <div class="form-group">
+											{{ form2.message (class="form-control reserve-form empty iconified",placeholder=form2.message.description)}}
+										</div>
+
+									    <div class="form-group">
+											{{ form2.phone (class="form-control reserve-form empty iconified",placeholder=form2.phone.description)}}
+										</div>
+									    <div class="form-group">
+											 {{ form.submit (class="btn btn-send",value="Відправити")}}
+	                                    </div>
+
+	                                </div>
+	                            </form>
                         </div>
-                    </div>
+                     {% endif %}
+
+                   	</div>
                 </div>
             </div>
         </section>

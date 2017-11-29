@@ -112,7 +112,21 @@ def main():
         return render_template('main.html', form=form,form2=form2, scroll=True, success=True)
     if request.form['form-submit'] == 'Відправити':
       print "2nd form"
-      return render_template('main.html', form=form, form2=form2)
+      if form2.validate()==False:
+        print form2.validate()
+        print "some fields at form2 are not validated"
+        print form2.errors.items()
+        return render_template('main.html', form=form,form2=form2, scrollContact=True, mistakeContact=True)      
+      else:
+        msg = Message("ContactForm", sender='volodya.ternopil1997@gmail.com', recipients=['volodya.ternopil1997@gmail.com'])
+        msg.body = """
+        Від: %s <%s>;
+        Телефон: %s;
+        Тема:%s;
+        Повідомлення:" %s";
+        """ % (form2.name.data, form2.email.data,form2.phone.data,form2.subject.data, form2.message.data )
+        mail.send(msg)                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+        return render_template('main.html', form=form,form2=form2, scrollContact=True, successContact=True)      
   elif request.method == 'GET':
     return render_template('main.html', form=form, form2=form2)
 

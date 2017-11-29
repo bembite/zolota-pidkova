@@ -14,7 +14,7 @@ class OrderTable(FlaskForm):
 	 phone=TextField("Phone",[validators.Required("Please enter your phone.")],description=u"Телефон*")
 	 #time=TextField("Time",[validators.Required("Please enter your time.")],description=u"Час*")
 	 dt = TextField("Date",[validators.Required("Please enter your phone.")],description=u"Дата*")
-	 time=TextField(validators=[Required()],description=u"Час*")
+	 time=TextField([validators.Required()],description=u"Час*")
 	 message = TextAreaField("Message",description=u"Додаткові побажання")
 	 quant = IntegerField([validators.Required("")],description=u"К-ть людей*")
 	 #recaptcha = RecaptchaField()
@@ -22,10 +22,12 @@ class OrderTable(FlaskForm):
 class ContactForm(FlaskForm):
 	 name = TextField("name",[validators.Required("Please enter your name .")],description=u"Ім'я*")
 	 email = TextField("Email",  [validators.Required("Please enter your email address."), validators.Email("check your email address")],description="Email*")
-	 message = TextAreaField("Message",description=u"Додаткові побажання")
-	 subject = TextField("subject",[validators.Required("Please enter your name .")],description=u"Тема*")
+	 message = TextAreaField("Message",[validators.Required("Please enter your name .")],description=u"Додаткові побажання")
+	 subject = TextField("subject",description=u"Тема*")
+	 phone=TextField("Phone",[validators.Required("Please enter your phone.")],description=u"Телефон*")
+
 	 #recaptcha = RecaptchaField()
-	 submit = SubmitField("Відправити")
+	 #submit = SubmitField("Відправити")
 
 class MyForm(FlaskForm):
      name = StringField('name', validators=[Required()])
