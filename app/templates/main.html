@@ -474,7 +474,7 @@
                                         </div>
 
                                         <div class="col-md-12 col-sm-12">
-                                                {{ form.submit (class="btn btn-reservation")}}
+                                                {{ form.submit (class="btn btn-reservation",value="Готово")}}
                                         </div>
                                             
                                     
@@ -537,34 +537,31 @@
 
 
 
-        <section class="contact-form">
+       <section class="contact-form">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
                         <div class="row">
-                             <form class="contact-form" method="post" action="contact.php">
+                             <form class="contact-form" method="post" action="{{ url_for('main') }}">
                                 
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
-                                        <input  name="name" type="text" class="form-control" id="name" required="required" placeholder="  Ім'я">
+                                         {{ form2.name ( class="form-control reserve-form empty iconified",placeholder=form2.name.description)}}                                    
                                     </div>
-
                                     <div class="form-group">
-                                        <input name="email" type="email" class="form-control" id="email" required="required" placeholder="  Email">
+                                        {{ form2.email (class="form-control reserve-form empty iconified",placeholder=form2.email.description)}}                                       
                                     </div>
-                                </div>
                                     <div class="form-group">
-                                        <input name="subject" type="text" class="form-control" id="subject" required="required" placeholder="  Тема">
+                                        {{ form2.subject (class="form-control reserve-form empty iconified",placeholder=form2.subject.description)}}                                          
                                     </div>
                                 </div>
 
-                                <div class="col-md-12 col-sm-12">
-                                    <textarea name="message" type="text" class="form-control" id="message" rows="7" required="required" placeholder="  Повідомлення"></textarea>
-                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                   {{ form2.message (class="form-control reserve-form empty iconified",placeholder=form2.message.description)}}
 
                                 <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
                                     <div class="text-center">
-                                        <button type="submit" id="submit" name="submit" class="btn btn-send">Відправити </button>
+                                                {{ form.submit (class="btn btn-send",value="Відправити")}}
                                     </div>
                                 </div>
                             </form>

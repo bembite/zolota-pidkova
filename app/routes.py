@@ -1,6 +1,6 @@
   # -*- coding: utf-8 -*- 
 from flask import Flask, render_template, request, flash, json
-from forms import OrderTable,MyForm, DateForm
+from forms import OrderTable,MyForm, DateForm, ContactForm
 from flask_mail import Mail, Message
 from datetime import date
 from flask_wtf.recaptcha import RecaptchaField
@@ -86,14 +86,16 @@ def time():
 
 @application.route('/main', methods=['GET', 'POST'])
 def main():
-  form = OrderTable()
+  form = OrderTable(prefix='form')
+  form2=ContactForm(prefix='form2')
   print request
   if request.method == 'POST':
-    if form.validate_on_submit() and form.submit.data:
+    if request.form['form-submit'] == 'Готово':
+    #if form_name=='form':
       if form.validate() == False:
         print form.validate()
         print "some fields are not validated"
-        return render_template('main.html', form=form, scroll=True, mistake=True)
+        return render_template('main.html', form=form,form2=form2, scroll=True, mistake=True)
       else:
         #print(form.time.data)
         #print(form.dt.data)
@@ -107,9 +109,12 @@ def main():
         Повідомлення:" %s";
         """ % (form.name.data, form.email.data,form.phone.data, form.dt.data, form.time.data,form.quant.data, form.message.data )
         mail.send(msg)																																																																																																																																																																																																																																					
-        return render_template('main.html', form=form, scroll=True, success=True)
+        return render_template('main.html', form=form,form2=form2, scroll=True, success=True)
+    if request.form['form-submit'] == 'Відправити':
+      print "2nd form"
+      return render_template('main.html', form=form, form2=form2)
   elif request.method == 'GET':
-	return render_template('main.html', form=form)
+    return render_template('main.html', form=form, form2=form2)
 
 
 

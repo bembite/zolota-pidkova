@@ -19,6 +19,13 @@ class OrderTable(FlaskForm):
 	 quant = IntegerField([validators.Required("")],description=u"К-ть людей*")
 	 #recaptcha = RecaptchaField()
 	 submit = SubmitField("Готово")
+class ContactForm(FlaskForm):
+	 name = TextField("name",[validators.Required("Please enter your name .")],description=u"Ім'я*")
+	 email = TextField("Email",  [validators.Required("Please enter your email address."), validators.Email("check your email address")],description="Email*")
+	 message = TextAreaField("Message",description=u"Додаткові побажання")
+	 subject = TextField("subject",[validators.Required("Please enter your name .")],description=u"Тема*")
+	 #recaptcha = RecaptchaField()
+	 submit = SubmitField("Відправити")
 
 class MyForm(FlaskForm):
      name = StringField('name', validators=[Required()])
