@@ -545,12 +545,22 @@
 		{% endif %}
        <section class="contact-form">
             <div class="container" id="scroll-contact">
-                <div class="row">
-                    {% if successContact %}
-                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-                                	<h2 class="section-content-title">Дякуємо, Ваша <br>думка важлива<br> для нас!</h2>
-                                </div>
-                    {% else %}
+                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+					<div class="row">
+	                    {% if successContact %}
+	                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+	                                	<div class="text-center">
+	                                	<h2 class="section-content-title">Дякуємо, Ваша думка важлива для нас!</h2>
+	                                	</div>
+	                                </div>
+	                    {% else %}
+	                    {% if mistakeContact %}
+	                             	 <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+										<div class="contact-mistake">
+		                                	<p>Перевірте Ваші данні, обов'язкові поля мають бути заповнені. Перевірти чи всі поля заповнені коректно </p>
+		                                </div>
+	                             	</div>
+						{% endif %}
                                 <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
 
                                 
@@ -561,12 +571,7 @@
 
                                 
                                 
-                             <div class="col-md-5 col-sm-6">
-                                {% if mistakeContact %}
-                                <div class="reservation-mistake">
-                                	<p>Перевірте Ваші данні, обов'язкові поля мають бути заповнені. Перевірти чи всі поля заповнені коректно </p>
-                                </div>
-                                {% endif %}
+	                              
 
 	                             <form class="contact-form" method="post" action="{{ url_for('main') }}">
 	                                
@@ -578,28 +583,35 @@
 	                                    <div class="form-group">
 	                                        {{ form2.email (class="form-control reserve-form empty iconified",placeholder=form2.email.description)}}                                       
 	                                    </div>
-	                                    <div class="form-group">
-	                                        {{ form2.subject (class="form-control reserve-form empty iconified",placeholder=form2.subject.description)}}                                          
-	                                    </div>
-	                                </div>
 
-	                                <div class="col-md-6 col-sm-6">
-	                                    <div class="form-group">
-											{{ form2.message (class="form-control reserve-form empty iconified",placeholder=form2.message.description)}}
-										</div>
+	                                    
 
-									    <div class="form-group">
+										<div class="form-group">	
 											{{ form2.phone (class="form-control reserve-form empty iconified",placeholder=form2.phone.description)}}
 										</div>
-									    <div class="form-group">
-											 {{ form.submit (class="btn btn-send",value="Відправити")}}
+										<div class="form-group">
+	                                        {{ form2.subject (class="form-control reserve-form empty iconified",placeholder=form2.subject.description)}}                                          
 	                                    </div>
+									</div>
+									  
 
+	                                
+	                                <div class="col-md-6 col-sm-6">
+	                                	{{ form2.message (class="form-control",rows="10",placeholder=form2.message.description)}}
 	                                </div>
+
+	                                
+
+	                                <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+                                    <div class="text-center">
+											 {{ form.submit (class="btn btn-send",value="Відправити")}}
+                                    </div>
+                                </div>
 	                            </form>
                         </div>
                      {% endif %}
 
+                   	</div>
                    	</div>
                 </div>
             </div>

@@ -23,7 +23,16 @@ application.config["MAIL_SERVER"] = "smtp.gmail.com"
 application.config["MAIL_PORT"] = 465
 application.config["MAIL_USE_SSL"] = True
 application.config["MAIL_USERNAME"] = 'volodya.ternopil1997@gmail.com'
-application.config["MAIL_PASSWORD"] = localsettings.MAIL_PASSWORD
+
+try:
+  import localsettings
+  application.config["MAIL_PASSWORD"] = localsettings.MAIL_PASSWORD
+except ImportError:   
+  #from os import environ
+  #application.config["MAIL_PASSWORD"] = environ.get('EMAILPASS')
+  from boto.s3.connection import S3Connection
+  s3 = S3Connection(os.environ['S3_KEY'], os.environ['EMAILPASS'])  
+
  
 mail.init_app(application)
 #for capcha
@@ -33,7 +42,7 @@ application.config['RECAPTCHA_PUBLIC_KEY']=localsettings.PUBLIC_KEY
 
 
 
-@application.route('/')
+@application.route('/main')
 def home():
   return render_template('changes.html')
 
@@ -84,7 +93,7 @@ def time():
         return form.dt.data
     return render_template('datepicker.html', form=form)
 
-@application.route('/main', methods=['GET', 'POST'])
+@application.route('/', methods=['GET', 'POST'])
 def main():
   form = OrderTable(prefix='form')
   form2=ContactForm(prefix='form2')

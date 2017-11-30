@@ -748,6 +748,16 @@ li.active
     border: 1px solid red;
 
 }
+.contact-mistake
+{
+	
+    border-radius: 12px;
+    padding: 2px;
+    text-align: center;
+    background-color: #ff4444b5;
+    border: 1px solid red;
+
+}
 .opening-time 
 {
 	background-color: #7d4f38;
